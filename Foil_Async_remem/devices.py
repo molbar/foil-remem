@@ -106,11 +106,11 @@ def take_measurement_isr():
     glovars.avg_data = calc.avg()
 
     #heat on/off based on latest sensor readings:
-    if in_sensor.temperature() <= glovars.heat_on_temp:
+    if in_sensor.temperature() <= glovars.heat_on_temp + calc.mod_curve("linear"):
         if not rel1.value() == 0:
             turn_heat("on")
 
-    elif in_sensor.temperature() >= glovars.heat_off_temp:
+    elif in_sensor.temperature() >= glovars.heat_off_temp + calc.mod_curve("linear"):
         turn_heat("off")
 
     #vent on/off logic:

@@ -3,6 +3,19 @@ import gc
 import os
 
 
+def mod_curve(mode):
+    if mode=="linear":
+        c=abs(round(glovars.otemp*0.07,1))
+        if glovars.otemp<-3:
+            return c
+        else:
+            return 0
+    
+    #not enough data yet to prepare manual curve however real life probably not linear
+    elif mode=="manual":
+        pass
+
+
 def cost(unit, last):  #calculate kwh
 
     if unit == "heat":
