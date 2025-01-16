@@ -3,9 +3,9 @@
 #lines imported as global variables
 #lines starting with "#" are ignored
 wifi_name1: molwifi2.4G
-password1: szEdErlEkvar77!
+password1: 
 wifi_name2: Wifi_Garage
-password2: h73p3ffapd6x
+password2: 
 wifi_prio: 1,2
 NC_API: true
 TS_API: true
