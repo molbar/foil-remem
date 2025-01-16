@@ -1,3 +1,7 @@
+#parameters to set
+#required structure: "name: value"
+#lines imported as global variables
+#lines starting with "#" are ignored
 wifi_name1: molwifi2.4G
 password1: szEdErlEkvar77!
 wifi_name2: Wifi_Garage
@@ -41,9 +45,10 @@ treshold_humid_note_otemp: 2
 use_watchdog: true
 watchdog_timeout: 50000
 network_check_inter: 1800
+# error codes below: Err1-Err9 are CRITICAL and initiate immediate notification through the NC server
 Err1: in_sensor_failure
 Err2: out_sensor_failure
-Err3: network_failure
-Err4: data_upload_failure
-Err5: ntp_timeset_failure
-Err6: display_error
+Err10: network_failure
+Err11: data_upload_failure
+Err12: ntp_timeset_failure
+Err13: display_error

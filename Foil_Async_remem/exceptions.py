@@ -15,6 +15,7 @@ def check_exceptions():
         #send a note
         note.note("Internal HUMIDITY Sensor","Average hourly HUM may be constant - restarting system")
         machine_reset()
+    #the unable to beasure temp->> the sensors are not working
     
         
         

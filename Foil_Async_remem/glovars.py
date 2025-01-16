@@ -25,12 +25,13 @@ def get_params():
         with open("/param.txt", "r") as f:
             for line in f:
                 line = line.strip()
-                if ":" in line:
-                    # !!! we dont check if variable already exist to save memory not calling globals() and locals() only if it will cause problems manual check: no same name in params.txt!!!
-                    global name
-                    name, value = line.split(":", 1)
-                    name = name.strip()
-                    globals()[name] = conv(value)
+                if line and not line.startswith("#"):
+                    if ":" in line:
+                        # !!! we dont check if variable already exist to save memory not calling globals() and locals() only if it will cause problems manual check: no same name in params.txt!!!
+                        global name
+                        name, value = line.split(":", 1)
+                        name = name.strip()
+                        globals()[name] = conv(value)
                     
     except OSError as e:
         print("Error opening file:", e)
